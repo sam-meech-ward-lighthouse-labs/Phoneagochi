@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="LPGViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bucket.png" translatesAutoresizingMaskIntoConstraints="NO" id="FsQ-nN-R1D">
+                                <rect key="frame" x="0.0" y="557" width="88" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="Kpg-tx-EFZ"/>
+                                    <constraint firstAttribute="height" constant="110" id="zFd-Jg-GfN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple.png" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-YR-urp">
+                                <rect key="frame" x="17" y="575" width="54" height="60"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R9r-hq-UWv"/>
+                                    <constraint firstAttribute="width" constant="54" id="alF-Ym-ucJ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ol3-uh-Rze" appends="YES" id="tVF-7y-u9d"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FsQ-nN-R1D" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4p0-na-0cm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zt4-YR-urp" secondAttribute="bottom" constant="32" id="DcH-mI-t0r"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="FsQ-nN-R1D" secondAttribute="bottom" id="UQ3-4a-3KV"/>
+                            <constraint firstItem="zt4-YR-urp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="17" id="X6c-TF-U28"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="apple" destination="zt4-YR-urp" id="K2v-on-nVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Ol3-uh-Rze">
+                    <connections>
+                        <action selector="pinchApple:" destination="vXZ-lx-hvc" id="wja-Pf-off"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="JQb-8U-Ait"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="33.5" y="31.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="apple.png" width="515" height="576"/>
+        <image name="bucket.png" width="273" height="297"/>
+    </resources>
+</document>
